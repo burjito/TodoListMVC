@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Task List";
     var currentSort = ViewData["CurrentSort"] as string ?? "";
+    var categories = ViewData["Categories"] as List<Category> ?? new List<Category>();
 
     var selectedCategory = Context.Request.Query["category"].ToString();
     var selectedPriority = Context.Request.Query["priority"].ToString();
@@ -16,10 +17,10 @@
         <div class="col-md-2">
             <select name="category" class="form-select">
                 <option value="">All Categories</option>
-                @foreach (var cat in Enum.GetNames(typeof(Category)))
+                @foreach (var cat in categories)
                 {
-                    var selected = (selectedCategory == cat) ? "selected" : "";
-                    @Html.Raw($"<option value=\"{cat}\" {selected}>{cat}</option>")
+                    var selected = (selectedCategory == cat.Id.ToString()) ? "selected" : "";
+                    @Html.Raw($"<option value=\"{cat.Id}\" {selected}>{cat.Name}</option>")
                 }
             </select>
         </div>
@@ -84,7 +85,7 @@
             {
                 <tr>
                     <td class="text-truncate">@task.Title</td>
-                    <td>@task.Category</td>
+                    <td>@task.Category?.Name</td>
                     <td>@task.Priority</td>
                     <td>
                         <span class="badge bg-@(task.Status == Status.Done ? "success" : "warning")">

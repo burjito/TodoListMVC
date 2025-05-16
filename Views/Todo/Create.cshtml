@@ -2,7 +2,7 @@
 @using TodoListMVC.Models
 @{
     ViewData["Title"] = "Create Task";
-    var categories = ViewData["Categories"] as List<Category>;
+    var categories = ViewData["Categories"] as List<Category> ?? new List<Category>();
 }
 
 <div class="container mt-4">
@@ -27,7 +27,8 @@
         </div>
         <div class="mb-3">
             <label asp-for="Priority" class="form-label">Priority</label>
-            <select asp-for="Priority" class="form-select" asp-items="Html.GetEnumSelectList<Priority>()"></select>
+            <select asp-for="Priority" class="form-select"
+                    asp-items="Html.GetEnumSelectList<TodoListMVC.Models.Priority>()"></select>
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
         <a asp-action="Index" class="btn btn-secondary">Cancel</a>

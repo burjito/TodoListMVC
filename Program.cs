@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TodoListMVC.Data; 
+using TodoListMVC.Data;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,8 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews()
     .AddRazorRuntimeCompilation(); // For live Razor view changes without rebuild
 
+// Read connection string from appsettings.json
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=todo.db")); // SQLite DB
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
