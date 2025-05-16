@@ -10,37 +10,60 @@
 
     <form asp-action="Edit" method="post" class="mt-3">
         <input type="hidden" asp-for="Id" />
+
         <div class="mb-3">
             <label asp-for="Title" class="form-label">Title</label>
             <input asp-for="Title" class="form-control" />
             <span asp-validation-for="Title" class="text-danger"></span>
         </div>
+
         <div class="mb-3">
             <label asp-for="Description" class="form-label">Description</label>
             <textarea asp-for="Description" class="form-control"></textarea>
         </div>
+
         <div class="mb-3">
             <label asp-for="CategoryId" class="form-label">Category</label>
             <select asp-for="CategoryId" class="form-select"
                     asp-items="@(new SelectList(categories, "Id", "Name"))">
                 <option value="">-- Select Category --</option>
             </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
         </div>
+
         <div class="mb-3">
             <label asp-for="Priority" class="form-label">Priority</label>
-            <select asp-for="Priority" class="form-select"
-                    asp-items="Html.GetEnumSelectList<TodoListMVC.Models.Priority>()"></select>
+            <select asp-for="Priority" class="form-select">
+                <option value="">-- Select Priority --</option>
+                @foreach (var p in Enum.GetValues(typeof(Priority)))
+                {
+                    <option value="@p" selected="@(Model.Priority == (Priority)p ? "selected" : null)">
+                        @p
+                    </option>
+                }
+            </select>
+            <span asp-validation-for="Priority" class="text-danger"></span>
         </div>
+
         <div class="mb-3">
             <label asp-for="Status" class="form-label">Status</label>
-            <select asp-for="Status" class="form-select"
-                    asp-items="Html.GetEnumSelectList<TodoListMVC.Models.Status>()"></select>
+            <select asp-for="Status" class="form-select">
+                <option value="">-- Select Status --</option>
+                @foreach (var s in Enum.GetValues(typeof(Status)))
+                {
+                    <option value="@s" selected="@(Model.Status == (Status)s ? "selected" : null)">
+                        @s
+                    </option>
+                }
+            </select>
+            <span asp-validation-for="Status" class="text-danger"></span>
         </div>
+
         <button type="submit" class="btn btn-primary">Save Changes</button>
         <a asp-action="Index" class="btn btn-secondary">Cancel</a>
     </form>
 
     @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     }
 </div>
