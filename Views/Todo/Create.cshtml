@@ -31,12 +31,8 @@
 
         <div class="mb-3">
             <label asp-for="Priority" class="form-label">Priority</label>
-            <select asp-for="Priority" class="form-select">
+            <select asp-for="Priority" class="form-select" asp-items="Html.GetEnumSelectList<Priority>()">
                 <option value="">-- Select Priority --</option>
-                @foreach (Priority p in Enum.GetValues(typeof(Priority)))
-                {
-                    <option value="@p" @(Model.Priority == p ? "selected" : "")>@p</option>
-                }
             </select>
             <span asp-validation-for="Priority" class="text-danger"></span>
         </div>
