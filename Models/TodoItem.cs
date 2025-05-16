@@ -16,10 +16,11 @@ namespace TodoListMVC.Models
         [Required]
         public string Description { get; set; } = null!;
 
-        // Foreign key
+        [Required(ErrorMessage = "Please select a category")]
         public int CategoryId { get; set; }
 
-        public Category Category { get; set; } = null!;
+        // Make this nullable so it isn't implicitly required
+        public Category? Category { get; set; }
 
         public Priority Priority { get; set; }
 

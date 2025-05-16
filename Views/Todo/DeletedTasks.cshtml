@@ -1,4 +1,5 @@
 @model List<TodoListMVC.Models.TodoItem>
+@using TodoListMVC.Models
 @{
     ViewData["Title"] = "Deleted Tasks";
 }
@@ -16,20 +17,34 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var task in Model)
-            {
-                <tr>
-                    <td>@task.Title</td>
-                    <td>@task.Category?.Name</td>
-                    <td>@task.Priority</td>
-                    <td><span class="badge bg-danger">@task.Status</span></td>
-                    <td>
+        @foreach(var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>@task.Category?.Name</td>
+                <td>@task.Priority</td>
+                <td><span class="badge bg-danger">@task.Status</span></td>
+                <td>
+                    <div class="d-flex flex-wrap gap-2">
                         <form asp-action="Restore" asp-route-id="@task.Id" method="post" class="d-inline">
-                            <button type="submit" class="btn btn-sm btn-success" onclick="return confirm('Restore this task?');">Restore</button>
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-sm btn-success"
+                                    onclick="return confirm('Restore this task?');">
+                                Restore
+                            </button>
                         </form>
-                    </td>
-                </tr>
-            }
+
+                        <form asp-action="DeleteForever" asp-route-id="@task.Id" method="post" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Permanently delete this task?');">
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
 </div>
