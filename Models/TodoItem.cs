@@ -11,14 +11,15 @@ namespace TodoListMVC.Models
         public int Id { get; set; }
 
         [Required]
-        public required string Title { get; set; }
+        public string Title { get; set; } = null!;
 
-        public required string Description { get; set; }
+        [Required]
+        public string Description { get; set; } = null!;
 
-        [ForeignKey("Category")]
+        // Foreign key
         public int CategoryId { get; set; }
 
-        public Category? Category { get; set; }
+        public Category Category { get; set; } = null!;
 
         public Priority Priority { get; set; }
 
