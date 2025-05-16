@@ -15,8 +15,8 @@
                 @foreach (var cat in Enum.GetNames(typeof(Category)))
                 {
                     var catVal = cat;
-                    var selected = Request.Query["category"] == catVal ? "selected" : "";
-                    <option value="@catVal" @selected>@cat</option>
+                    var selected = Request.Query["category"] == catVal ? "selected=\"selected\"" : "";
+                    <option value="@catVal" @Html.Raw(selected)>@cat</option>
                 }
             </select>
         </div>
@@ -26,8 +26,8 @@
                 @foreach (var p in Enum.GetNames(typeof(Priority)))
                 {
                     var pVal = p;
-                    var selected = Request.Query["priority"] == pVal ? "selected" : "";
-                    <option value="@pVal" @selected>@p</option>
+                    var selected = Request.Query["priority"] == pVal ? "selected=\"selected\"" : "";
+                    <option value="@pVal" @Html.Raw(selected)>@p</option>
                 }
             </select>
         </div>
@@ -37,18 +37,18 @@
                 @foreach (var s in Enum.GetNames(typeof(Status)))
                 {
                     var sVal = s;
-                    var selected = Request.Query["status"] == sVal ? "selected" : "";
-                    <option value="@sVal" @selected>@s</option>
+                    var selected = Request.Query["status"] == sVal ? "selected=\"selected\"" : "";
+                    <option value="@sVal" @Html.Raw(selected)>@s</option>
                 }
             </select>
         </div>
         <div class="col-md-3">
             <select name="sortOrder" class="form-select">
                 <option value="">Sort By</option>
-                <option value="title_asc" @(currentSort == "title_asc" ? "selected" : "")>Title A - Z</option>
-                <option value="title_desc" @(currentSort == "title_desc" ? "selected" : "")>Title Z - A</option>
-                <option value="priority_asc" @(currentSort == "priority_asc" ? "selected" : "")>Priority Low to High</option>
-                <option value="priority_desc" @(currentSort == "priority_desc" ? "selected" : "")>Priority High to Low</option>
+                <option value="title_asc" @(currentSort == "title_asc" ? "selected=\"selected\"" : "")>Title A - Z</option>
+                <option value="title_desc" @(currentSort == "title_desc" ? "selected=\"selected\"" : "")>Title Z - A</option>
+                <option value="priority_asc" @(currentSort == "priority_asc" ? "selected=\"selected\"" : "")>Priority Low to High</option>
+                <option value="priority_desc" @(currentSort == "priority_desc" ? "selected=\"selected\"" : "")>Priority High to Low</option>
             </select>
         </div>
         <div class="col-md-3 d-flex justify-content-between">
