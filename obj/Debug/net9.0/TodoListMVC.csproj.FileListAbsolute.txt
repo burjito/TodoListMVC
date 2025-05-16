@@ -516,3 +516,4 @@ C:\Users\Jedd\TodoListMVC\obj\Debug\net9.0\refint\TodoListMVC.dll
 C:\Users\Jedd\TodoListMVC\obj\Debug\net9.0\TodoListMVC.pdb
 C:\Users\Jedd\TodoListMVC\obj\Debug\net9.0\TodoListMVC.genruntimeconfig.cache
 C:\Users\Jedd\TodoListMVC\obj\Debug\net9.0\ref\TodoListMVC.dll
+C:\Users\Jedd\TodoListMVC\obj\Debug\net9.0\TodoListMVC.sourcelink.json
