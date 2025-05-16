@@ -1,0 +1,34 @@
+@model List<TodoListMVC.Models.TodoItem>
+@{
+    ViewData["Title"] = "Completed Tasks";
+}
+
+<div class="container mt-4">
+    <h2>Completed Tasks</h2>
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var task in Model)
+            {
+                <tr>
+                    <td>@task.Title</td>
+                    <td>@task.Category?.Name</td>
+                    <td>@task.Priority</td>
+                    <td><span class="badge bg-success">@task.Status</span></td>
+                    <td>
+                        <a href="@Url.Action("Details", "Todo", new { id = task.Id })" class="btn btn-sm btn-info">View</a>
+                        <a href="@Url.Action("Edit", "Todo", new { id = task.Id })" class="btn btn-sm btn-warning">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
