@@ -46,10 +46,21 @@
         <div class="col-md-3">
             <select name="sortOrder" class="form-select">
                 <option value="">Sort By</option>
-                <option value="title_asc" @(currentSort == "title_asc" ? "selected" : "")>Title A - Z</option>
-                <option value="title_desc" @(currentSort == "title_desc" ? "selected" : "")>Title Z - A</option>
-                <option value="priority_asc" @(currentSort == "priority_asc" ? "selected" : "")>Priority Low to High</option>
-                <option value="priority_desc" @(currentSort == "priority_desc" ? "selected" : "")>Priority High to Low</option>
+                @{
+                    var sortOptions = new Dictionary<string, string>
+                    {
+                        { "title_asc", "Title A - Z" },
+                        { "title_desc", "Title Z - A" },
+                        { "priority_asc", "Priority Low to High" },
+                        { "priority_desc", "Priority High to Low" }
+                    };
+
+                    foreach (var opt in sortOptions)
+                    {
+                        var selected = (currentSort == opt.Key) ? "selected" : "";
+                        @Html.Raw($"<option value=\"{opt.Key}\" {selected}>{opt.Value}</option>")
+                    }
+                }
             </select>
         </div>
         <div class="col-md-3 d-flex justify-content-between">
