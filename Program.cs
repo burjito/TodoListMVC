@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TodoListMVC.Data; // Adjust this namespace based on your actual DbContext location
+using TodoListMVC.Data; 
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);

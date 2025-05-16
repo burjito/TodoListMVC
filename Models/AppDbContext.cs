@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using TodoListMVC.Models; // Adjust based on your model namespace
+using TodoListMVC.Models; 
 
-namespace TodoListMVC.Data // This should match what you're using in `Program.cs`
+namespace TodoListMVC.Data 
 {
     public class AppDbContext : DbContext
     {
