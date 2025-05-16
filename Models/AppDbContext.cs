@@ -1,15 +1,14 @@
 using Microsoft.EntityFrameworkCore;
-using TodoListMVC.Models; 
+using TodoListMVC.Models;
 
-namespace TodoListMVC.Data 
+namespace TodoListMVC.Data
 {
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
-            : base(options)
-        {
-        }
+            : base(options) { }
 
         public DbSet<TodoItem> TodoItems { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
