@@ -1,0 +1,34 @@
+@model List<TodoListMVC.Models.Category>
+@{
+    ViewData["Title"] = "Manage Categories";
+}
+
+<div class="container mt-4">
+    <h2>Manage Categories</h2>
+    @if(TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+    <a href="@Url.Action("AddCategory", "Todo")" class="btn btn-primary mb-3">+ Add Category</a>
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th style="width: 15%;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var cat in Model)
+            {
+                <tr>
+                    <td>@cat.Name</td>
+                    <td>
+                        <a href="@Url.Action("EditCategory", "Todo", new { id = cat.Id })" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="@Url.Action("DeleteCategory", "Todo", new { id = cat.Id })" class="btn btn-sm btn-danger"
+                           onclick="return confirm('Are you sure you want to delete this category?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
