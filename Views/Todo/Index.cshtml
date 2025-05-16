@@ -14,7 +14,9 @@
                 <option value="">All Categories</option>
                 @foreach (var cat in Enum.GetNames(typeof(Category)))
                 {
-                    <option value="@cat" @(Request.Query["category"] == cat ? "selected" : "")>@cat</option>
+                    var catVal = cat;
+                    var selected = Request.Query["category"] == catVal ? "selected" : "";
+                    <option value="@catVal" @selected>@cat</option>
                 }
             </select>
         </div>
@@ -23,7 +25,9 @@
                 <option value="">All Priorities</option>
                 @foreach (var p in Enum.GetNames(typeof(Priority)))
                 {
-                    <option value="@p" @(Request.Query["priority"] == p ? "selected" : "")>@p</option>
+                    var pVal = p;
+                    var selected = Request.Query["priority"] == pVal ? "selected" : "";
+                    <option value="@pVal" @selected>@p</option>
                 }
             </select>
         </div>
@@ -32,7 +36,9 @@
                 <option value="">All Statuses</option>
                 @foreach (var s in Enum.GetNames(typeof(Status)))
                 {
-                    <option value="@s" @(Request.Query["status"] == s ? "selected" : "")>@s</option>
+                    var sVal = s;
+                    var selected = Request.Query["status"] == sVal ? "selected" : "";
+                    <option value="@sVal" @selected>@s</option>
                 }
             </select>
         </div>
