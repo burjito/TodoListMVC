@@ -18,25 +18,24 @@
         <div class="mb-3">
             <label asp-for="Description" class="form-label">Description</label>
             <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="CategoryId" class="form-label">Category</label>
-            <select asp-for="CategoryId" class="form-select"
-                    asp-items="@(new SelectList(categories, "Id", "Name"))">
+            <select asp-for="CategoryId" class="form-select" asp-items="@(new SelectList(categories, "Id", "Name"))">
                 <option value="">-- Select Category --</option>
             </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Priority" class="form-label">Priority</label>
             <select asp-for="Priority" class="form-select">
                 <option value="">-- Select Priority --</option>
-                @foreach (var p in Enum.GetValues(typeof(Priority)))
+                @foreach (Priority p in Enum.GetValues(typeof(Priority)))
                 {
-                    <option value="@p" selected="@(Model.Priority == (Priority)p ? "selected" : null)">
-                        @p
-                    </option>
+                    <option value="@p" @(Model.Priority == p ? "selected" : "")>@p</option>
                 }
             </select>
             <span asp-validation-for="Priority" class="text-danger"></span>
