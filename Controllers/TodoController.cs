@@ -15,7 +15,7 @@ namespace TodoListMVC.Controllers
             _context = context;
         }
 
-        public IActionResult Index(string category, string priority, string status)
+        public IActionResult Index(string category, string priority, string status, string sortOrder)
         {
             var tasks = _context.TodoItems.Where(t => !t.IsHidden).AsQueryable();
 
@@ -27,6 +27,19 @@ namespace TodoListMVC.Controllers
 
             if (!string.IsNullOrEmpty(status))
                 tasks = tasks.Where(t => t.Status.ToString() == status);
+
+            // Sorting logic
+            tasks = sortOrder switch
+            {
+                "title_desc" => tasks.OrderByDescending(t => t.Title),
+                "priority_asc" => tasks.OrderBy(t => t.Priority),
+                "priority_desc" => tasks.OrderByDescending(t => t.Priority),
+                "title_asc" => tasks.OrderBy(t => t.Title),
+                _ => tasks.OrderBy(t => t.Id) // Default sorting (by Id)
+            };
+
+            // Pass current sortOrder to view via ViewData for UI state
+            ViewData["CurrentSort"] = sortOrder ?? "";
 
             return View(tasks.ToList());
         }
