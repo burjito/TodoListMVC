@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "Task List";
     var currentSort = ViewData["CurrentSort"] as string ?? "";
+
+    var selectedCategory = Context.Request.Query["category"].ToString();
+    var selectedPriority = Context.Request.Query["priority"].ToString();
+    var selectedStatus = Context.Request.Query["status"].ToString();
 }
 
 <div class="container mt-4">
@@ -14,8 +18,8 @@
                 <option value="">All Categories</option>
                 @foreach (var cat in Enum.GetNames(typeof(Category)))
                 {
-                    var selected = Request.Query["category"] == cat ? "selected" : "";
-                    @: <option value="@cat" @selected>@cat</option>
+                    var selected = (selectedCategory == cat) ? "selected" : "";
+                    @Html.Raw($"<option value=\"{cat}\" {selected}>{cat}</option>")
                 }
             </select>
         </div>
@@ -24,8 +28,8 @@
                 <option value="">All Priorities</option>
                 @foreach (var p in Enum.GetNames(typeof(Priority)))
                 {
-                    var selected = Request.Query["priority"] == p ? "selected" : "";
-                    @: <option value="@p" @selected>@p</option>
+                    var selected = (selectedPriority == p) ? "selected" : "";
+                    @Html.Raw($"<option value=\"{p}\" {selected}>{p}</option>")
                 }
             </select>
         </div>
@@ -34,8 +38,8 @@
                 <option value="">All Statuses</option>
                 @foreach (var s in Enum.GetNames(typeof(Status)))
                 {
-                    var selected = Request.Query["status"] == s ? "selected" : "";
-                    @: <option value="@s" @selected>@s</option>
+                    var selected = (selectedStatus == s) ? "selected" : "";
+                    @Html.Raw($"<option value=\"{s}\" {selected}>{s}</option>")
                 }
             </select>
         </div>
