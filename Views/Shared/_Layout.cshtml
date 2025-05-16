@@ -8,17 +8,24 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">TodoList</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="/Todo">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Todo/Create">Add Task</a></li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">TodoListMVC</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" asp-controller="Todo" asp-action="Index">Home</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Todo" asp-action="Create">Add Task</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Todo" asp-action="CompletedTasks">Completed Tasks</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Todo" asp-action="DeletedTasks">Deleted Tasks</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Todo" asp-action="Categories">Categories</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <div class="container">
         <main role="main" class="pb-3">
