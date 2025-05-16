@@ -14,10 +14,12 @@
             <input asp-for="Title" class="form-control" />
             <span asp-validation-for="Title" class="text-danger"></span>
         </div>
+
         <div class="mb-3">
             <label asp-for="Description" class="form-label">Description</label>
             <textarea asp-for="Description" class="form-control"></textarea>
         </div>
+
         <div class="mb-3">
             <label asp-for="CategoryId" class="form-label">Category</label>
             <select asp-for="CategoryId" class="form-select"
@@ -25,16 +27,26 @@
                 <option value="">-- Select Category --</option>
             </select>
         </div>
+
         <div class="mb-3">
             <label asp-for="Priority" class="form-label">Priority</label>
-            <select asp-for="Priority" class="form-select"
-                    asp-items="Html.GetEnumSelectList<TodoListMVC.Models.Priority>()"></select>
+            <select asp-for="Priority" class="form-select">
+                <option value="">-- Select Priority --</option>
+                @foreach (var p in Enum.GetValues(typeof(Priority)))
+                {
+                    <option value="@p" selected="@(Model.Priority == (Priority)p ? "selected" : null)">
+                        @p
+                    </option>
+                }
+            </select>
+            <span asp-validation-for="Priority" class="text-danger"></span>
         </div>
+
         <button type="submit" class="btn btn-primary">Create</button>
         <a asp-action="Index" class="btn btn-secondary">Cancel</a>
     </form>
 
     @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     }
 </div>
