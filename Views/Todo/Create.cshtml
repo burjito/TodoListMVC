@@ -2,6 +2,7 @@
 @using TodoListMVC.Models
 @{
     ViewData["Title"] = "Create Task";
+    var categories = ViewData["Categories"] as List<Category>;
 }
 
 <div class="container mt-4">
@@ -18,8 +19,11 @@
             <textarea asp-for="Description" class="form-control"></textarea>
         </div>
         <div class="mb-3">
-            <label asp-for="Category" class="form-label">Category</label>
-            <select asp-for="Category" class="form-select" asp-items="Html.GetEnumSelectList<Category>()"></select>
+            <label asp-for="CategoryId" class="form-label">Category</label>
+            <select asp-for="CategoryId" class="form-select"
+                    asp-items="@(new SelectList(categories, "Id", "Name"))">
+                <option value="">-- Select Category --</option>
+            </select>
         </div>
         <div class="mb-3">
             <label asp-for="Priority" class="form-label">Priority</label>
@@ -30,7 +34,6 @@
     </form>
 
     @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
 </div>

@@ -36,6 +36,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jedd/TodoListMVC/Views/Todo/AddCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xBZGRDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jedd/TodoListMVC/Views/Todo/Categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xDYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jedd/TodoListMVC/Views/Todo/CompletedTasks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xDb21wbGV0ZWRUYXNrcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jedd/TodoListMVC/Views/Todo/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,12 +56,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jedd/TodoListMVC/Views/Todo/DeletedTasks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xEZWxldGVkVGFza3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jedd/TodoListMVC/Views/Todo/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jedd/TodoListMVC/Views/Todo/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jedd/TodoListMVC/Views/Todo/EditCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xFZGl0Q2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jedd/TodoListMVC/Views/Todo/Index.cshtml]
