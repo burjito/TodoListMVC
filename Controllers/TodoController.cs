@@ -21,17 +21,15 @@ namespace TodoListMVC.Controllers
                 .Include(t => t.Category)
                 .AsQueryable();
 
-            // Always exclude deleted items
-            tasks = tasks.Where(t => t.Status != Status.Deleted);
-
-            // Only include hidden items if explicitly requested
-            if (!showHidden)
+            if (showHidden)
             {
-                tasks = tasks.Where(t => !t.IsHidden);
+                // Show only hidden tasks, exclude deleted as usual
+                tasks = tasks.Where(t => t.IsHidden && t.Status != Status.Deleted);
             }
             else
             {
-                tasks = tasks.Where(t => t.IsHidden);
+                // Show only non-hidden, non-deleted tasks
+                tasks = tasks.Where(t => !t.IsHidden && t.Status != Status.Deleted);
             }
 
             if (!string.IsNullOrEmpty(category) && int.TryParse(category, out int catId))

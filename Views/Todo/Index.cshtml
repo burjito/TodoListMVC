@@ -10,78 +10,71 @@
     var selectedStatus = Context.Request.Query["status"].ToString();
     var showHidden = Context.Request.Query["showHidden"].ToString() == "true";
 }
+
 <div class="container mt-4">
     <h2 class="mb-3">To-Do List</h2>
 
-    <form method="get" class="row g-3 mb-4 align-items-center">
+    <form method="get" class="row g-3 align-items-center mb-3">
         <div class="col-md-2">
-            <select name="category" class="form-select">
-                <option value="">All Categories</option>
+            <select name="category" class="form-select form-select-sm">
+                <option value="" selected="@(string.IsNullOrEmpty(selectedCategory) ? "selected" : null)">All Categories</option>
                 @foreach (var cat in categories)
                 {
-                    var selected = (selectedCategory == cat.Id.ToString()) ? "selected" : "";
-                    @Html.Raw($"<option value=\"{cat.Id}\" {selected}>{cat.Name}</option>")
+                    <option value="@cat.Id" selected="@(selectedCategory == cat.Id.ToString() ? "selected" : null)">@cat.Name</option>
                 }
             </select>
         </div>
-        <div class="col-md-2">
-            <select name="priority" class="form-select">
-                <option value="">All Priorities</option>
-                @foreach (var p in Enum.GetNames(typeof(Priority)))
-                {
-                    var selected = (selectedPriority == p) ? "selected" : "";
-                    @Html.Raw($"<option value=\"{p}\" {selected}>{p}</option>")
-                }
-            </select>
-        </div>
-        <div class="col-md-2">
-            <select name="status" class="form-select">
-                <option value="">All Statuses</option>
-                @foreach (var s in Enum.GetNames(typeof(Status)))
-                {
-                    var selected = (selectedStatus == s) ? "selected" : "";
-                    @Html.Raw($"<option value=\"{s}\" {selected}>{s}</option>")
-                }
-            </select>
-        </div>
-        <div class="col-md-2">
-            <select name="sortOrder" class="form-select">
-                <option value="">Sort By</option>
-                @{
-                    var sortOptions = new Dictionary<string, string>
-                    {
-                        { "title_asc", "Title A - Z" },
-                        { "title_desc", "Title Z - A" },
-                        { "priority_asc", "Priority Low to High" },
-                        { "priority_desc", "Priority High to Low" }
-                    };
 
-                    foreach (var opt in sortOptions)
-                    {
-                        var selected = (currentSort == opt.Key) ? "selected" : "";
-                        @Html.Raw($"<option value=\"{opt.Key}\" {selected}>{opt.Value}</option>")
-                    }
-                }
+        <div class="col-md-2">
+            <select name="priority" class="form-select form-select-sm">
+                <option value="" selected="@(string.IsNullOrEmpty(selectedPriority) ? "selected" : null)">All Priorities</option>
+                <option value="Low" selected="@(selectedPriority == "Low" ? "selected" : null)">Low</option>
+                <option value="Medium" selected="@(selectedPriority == "Medium" ? "selected" : null)">Medium</option>
+                <option value="High" selected="@(selectedPriority == "High" ? "selected" : null)">High</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <select name="status" class="form-select form-select-sm">
+                <option value="" selected="@(string.IsNullOrEmpty(selectedStatus) ? "selected" : null)">All Status</option>
+                <option value="Pending" selected="@(selectedStatus == "Pending" ? "selected" : null)">Pending</option>
+                <option value="Done" selected="@(selectedStatus == "Done" ? "selected" : null)">Done</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <select name="sortOrder" class="form-select form-select-sm">
+                <option value="" selected="@(string.IsNullOrEmpty(currentSort) ? "selected" : null)">Sort by ID Asc</option>
+                <option value="title_asc" selected="@(currentSort == "title_asc" ? "selected" : null)">Title Asc</option>
+                <option value="title_desc" selected="@(currentSort == "title_desc" ? "selected" : null)">Title Desc</option>
+                <option value="priority_asc" selected="@(currentSort == "priority_asc" ? "selected" : null)">Priority Asc</option>
+                <option value="priority_desc" selected="@(currentSort == "priority_desc" ? "selected" : null)">Priority Desc</option>
             </select>
         </div>
 
         <div class="col-md-3 d-flex gap-2 align-items-center">
             <input type="hidden" name="showHidden" value="@showHidden" />
-            <button type="submit" class="btn btn-primary">Filter</button>
-
-            <a class="btn btn-outline-secondary @(showHidden ? "active" : "")"
-               href="?category=@selectedCategory&priority=@selectedPriority&status=@selectedStatus&sortOrder=@currentSort&showHidden=@(!showHidden)">
-                @(showHidden ? "Hide Hidden" : "Show Hidden Items")
+            <button type="submit" class="btn btn-primary btn-sm">Apply Filters</button>
+            
+            <a asp-action="Index"
+               asp-route-category="@selectedCategory"
+               asp-route-priority="@selectedPriority"
+               asp-route-status="@selectedStatus"
+               asp-route-sortOrder="@currentSort"
+               asp-route-showHidden="@(showHidden ? "false" : "true")"
+               class="btn btn-@(showHidden ? "secondary active" : "outline-secondary") btn-sm"
+               style="color:@(showHidden ? "white" : ""); background-color:@(showHidden ? "gray" : ""); border-color:gray;">
+                @(showHidden ? "Hide Hidden Items" : "Show Hidden Items")
             </a>
         </div>
 
-        <div class="col-md d-flex justify-content-end align-items-center">
-            <a class="btn btn-success" href="/Todo/Create">New Task</a>
+        <div class="col-md d-flex justify-content-end align-items-center"> 
+            <a asp-action="Create" class="btn btn-success btn-sm">Add Task</a>
         </div>
     </form>
 
     <table class="table table-bordered table-hover align-middle">
-        <thead class="table-dark" style="background-color:#e9ecef; color:#212529;">
+        <thead class="table-dark">
             <tr>
                 <th style="width:36%;">Title</th>
                 <th style="width:13%;">Category</th>
@@ -95,7 +88,7 @@
             {
                 if (item.IsHidden && !showHidden)
                 {
-                    continue; // skip hidden unless showHidden is true
+                    continue;
                 }
 
                 string statusClass = item.Status switch
@@ -109,9 +102,7 @@
                     <td>@item.Title</td>
                     <td>@item.Category?.Name</td>
                     <td>@item.Priority</td>
-                    <td>
-                        <span class="@statusClass">@item.Status</span>
-                    </td>
+                    <td><span class="@statusClass">@item.Status</span></td>
                     <td>
                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm me-1">View</a>
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm me-1">Edit</a>
