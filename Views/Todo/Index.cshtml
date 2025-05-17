@@ -64,60 +64,78 @@
                 }
             </select>
         </div>
-        <div class="col-md-4 d-flex gap-2">
+
+        <div class="col-md-auto d-flex gap-2">
             <button type="submit" class="btn btn-primary">Filter</button>
-            <a class="btn @(showHidden ? "btn-warning" : "btn-outline-warning")" href="?showHidden=@(!showHidden)">
+            <a class="btn btn-outline-secondary @(showHidden ? "active" : "")" href="?showHidden=@(!showHidden)">
                 @(showHidden ? "Hide Hidden" : "Show Hidden Items")
             </a>
+        </div>
+
+        <div class="col d-flex justify-content-end">
             <a class="btn btn-success" href="/Todo/Create">+ New Task</a>
         </div>
     </form>
 
+
+
     <table class="table table-bordered table-hover align-middle">
-        <thead class="table-dark">
+        <thead class="table-dark" style="background-color:#e9ecef; color:#212529;">
             <tr>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Priority</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th style="width:36%;">Title</th>
+                <th style="width:13%;">Category</th>
+                <th style="width:13%;">Priority</th>
+                <th style="width:13%;">Status</th>
+                <th style="width:25%;">Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var task in Model)
+            @foreach (var item in Model)
             {
-                if (!showHidden && task.IsHidden)
+                if (item.IsHidden && !showHidden)
                 {
-                    continue;
+                    continue; // skip hidden unless showHidden is true
                 }
 
-                var rowClass = task.Status == Status.Done ? "table-success" : "table-warning";
-                <tr class="@rowClass">
-                    <td>@task.Title</td>
-                    <td>@task.Category?.Name</td>
-                    <td>@task.Priority</td>
-                    <td>@task.Status</td>
-                    <td>
-                        <a class="btn btn-sm btn-info" href="/Todo/Details/@task.Id">View</a>
-                        <a class="btn btn-sm btn-secondary" href="/Todo/Edit/@task.Id">Edit</a>
+                string statusClass = item.Status switch
+                {
+                    Status.Pending => "badge bg-warning text-dark",
+                    Status.Done => "badge bg-success",
+                    _ => "badge bg-secondary"
+                };
 
-                        <form method="post" action="/Todo/ToggleHide/@task.Id" style="display:inline;">
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Category?.Name</td>
+                    <td>@item.Priority</td>
+                    <td>
+                        <span class="@statusClass">@item.Status</span>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm me-1">View</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm me-1">Edit</a>
+
+                        <form asp-action="ToggleHide" method="post" class="d-inline">
                             @Html.AntiForgeryToken()
-                            <button type="submit" class="btn btn-sm @(task.IsHidden ? "btn-success" : "btn-warning")" title="@(task.IsHidden ? "Unhide" : "Hide") Task">
-                                @(task.IsHidden ? "Unhide" : "Hide")
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <input type="hidden" name="showHidden" value="@(showHidden)" />
+                            <button type="submit" class="btn btn-secondary btn-sm me-1">
+                                @(item.IsHidden ? "Unhide" : "Hide")
                             </button>
                         </form>
 
-                        <form method="post" action="/Todo/Delete/@task.Id" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this task?');">
+                        <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this task?');">
                             @Html.AntiForgeryToken()
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm me-1">Delete</button>
                         </form>
 
-                        @if (task.Status != Status.Done)
+                        @if (item.Status != Status.Done)
                         {
-                            <form method="post" action="/Todo/MarkAsDone/@task.Id" style="display:inline;">
+                            <form asp-action="MarkAsDone" method="post" class="d-inline">
                                 @Html.AntiForgeryToken()
-                                <button type="submit" class="btn btn-sm btn-success">Done</button>
+                                <input type="hidden" name="id" value="@item.Id" />
+                                <button type="submit" class="btn btn-success btn-sm">Done</button>
                             </form>
                         }
                     </td>
