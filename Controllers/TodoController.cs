@@ -86,6 +86,7 @@ namespace TodoListMVC.Controllers
             }
 
             item.Status = Status.Pending;
+            item.IsHidden = false; // Ensure new items start visible
             _context.TodoItems.Add(item);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
@@ -202,7 +203,7 @@ namespace TodoListMVC.Controllers
         // POST: /Todo/ToggleHide/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ToggleHide(int id)
+        public IActionResult ToggleHide(int id, bool showHidden = false)
         {
             var item = _context.TodoItems.Find(id);
             if (item == null) return NotFound();
@@ -210,9 +211,8 @@ namespace TodoListMVC.Controllers
             item.IsHidden = !item.IsHidden;
             _context.SaveChanges();
 
-            // Redirect back to Index with correct showHidden flag depending on current context
-            // We infer if we came from hidden view or normal view by looking at IsHidden after toggle
-            return RedirectToAction(nameof(Index), new { showHidden = item.IsHidden });
+            // Redirect back to Index preserving current showHidden filter
+            return RedirectToAction(nameof(Index), new { showHidden = showHidden });
         }
 
         // ===== Category Management =====

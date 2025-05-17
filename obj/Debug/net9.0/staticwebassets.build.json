@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZtH5AkLiEH+4HmrRvtH5CkNnbHFBGX9Fp2OkSZWll5I=",
+  "Hash": "dloZV43e7u6eV6iypSHMCnhexzdZhEaeaUQFg/98uzc=",
   "Source": "TodoListMVC",
   "BasePath": "_content/TodoListMVC",
   "Mode": "Default",
@@ -80,12 +80,12 @@
       "OriginalItemSpec": "C:\\Users\\Jedd\\TodoListMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-xhs6yugssu.gz",
+      "Identity": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-18u20fsgje.gz",
       "SourceId": "TodoListMVC",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TodoListMVC",
-      "RelativePath": "TodoListMVC#[.{fingerprint=xhs6yugssu}]!.bundle.scp.css.gz",
+      "RelativePath": "TodoListMVC#[.{fingerprint=18u20fsgje}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -94,8 +94,8 @@
       "RelatedAsset": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TodoListMVC.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "c8kzi403np",
-      "Integrity": "LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=",
+      "Fingerprint": "7q53zce00f",
+      "Integrity": "v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TodoListMVC.bundle.scp.css"
@@ -122,12 +122,12 @@
       "OriginalItemSpec": "C:\\Users\\Jedd\\TodoListMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-xhs6yugssu.gz",
+      "Identity": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-18u20fsgje.gz",
       "SourceId": "TodoListMVC",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TodoListMVC",
-      "RelativePath": "TodoListMVC#[.{fingerprint=xhs6yugssu}]?.styles.css.gz",
+      "RelativePath": "TodoListMVC#[.{fingerprint=18u20fsgje}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -136,8 +136,8 @@
       "RelatedAsset": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TodoListMVC.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "c8kzi403np",
-      "Integrity": "LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=",
+      "Fingerprint": "7q53zce00f",
+      "Integrity": "v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TodoListMVC.styles.css"
@@ -1375,8 +1375,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "xhs6yugssu",
-      "Integrity": "O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=",
+      "Fingerprint": "18u20fsgje",
+      "Integrity": "gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TodoListMVC.styles.css"
@@ -1396,8 +1396,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "xhs6yugssu",
-      "Integrity": "O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=",
+      "Fingerprint": "18u20fsgje",
+      "Integrity": "gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TodoListMVC.bundle.scp.css"
@@ -21286,13 +21286,13 @@
       ]
     },
     {
-      "Route": "TodoListMVC.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-xhs6yugssu.gz",
+      "Route": "TodoListMVC.18u20fsgje.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-18u20fsgje.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002016129032"
+          "Quality": "0.001886792453"
         }
       ],
       "ResponseHeaders": [
@@ -21302,19 +21302,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "495"
+          "Value": "529"
         },
         {
           "Name": "ETag",
-          "Value": "\"LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=\""
+          "Value": "\"v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -21330,18 +21330,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=\""
+          "Value": "W/\"gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "18u20fsgje"
+        },
+        {
+          "Name": "label",
+          "Value": "TodoListMVC.bundle.scp.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM="
+          "Value": "sha256-gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8="
         }
       ]
     },
     {
-      "Route": "TodoListMVC.bundle.scp.css",
+      "Route": "TodoListMVC.18u20fsgje.bundle.scp.css",
       "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TodoListMVC.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21351,7 +21359,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1002"
+          "Value": "1097"
         },
         {
           "Name": "Content-Type",
@@ -21359,258 +21367,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=\""
+          "Value": "\"gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM="
-        }
-      ]
-    },
-    {
-      "Route": "TodoListMVC.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-xhs6yugssu.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "495"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U="
-        }
-      ]
-    },
-    {
-      "Route": "TodoListMVC.styles.css",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-xhs6yugssu.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.002016129032"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "495"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM="
-        }
-      ]
-    },
-    {
-      "Route": "TodoListMVC.styles.css",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TodoListMVC.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1002"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM="
-        }
-      ]
-    },
-    {
-      "Route": "TodoListMVC.styles.css.gz",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-xhs6yugssu.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "495"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U="
-        }
-      ]
-    },
-    {
-      "Route": "TodoListMVC.xhs6yugssu.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-xhs6yugssu.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.002016129032"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "495"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xhs6yugssu"
+          "Value": "18u20fsgje"
         },
         {
           "Name": "label",
@@ -21618,13 +21389,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM="
+          "Value": "sha256-gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8="
         }
       ]
     },
     {
-      "Route": "TodoListMVC.xhs6yugssu.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TodoListMVC.bundle.scp.css",
+      "Route": "TodoListMVC.18u20fsgje.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-18u20fsgje.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21633,7 +21404,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1002"
+          "Value": "529"
         },
         {
           "Name": "Content-Type",
@@ -21641,56 +21412,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=\""
+          "Value": "\"v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "xhs6yugssu"
-        },
-        {
-          "Name": "label",
-          "Value": "TodoListMVC.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM="
-        }
-      ]
-    },
-    {
-      "Route": "TodoListMVC.xhs6yugssu.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-xhs6yugssu.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "495"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21708,7 +21434,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xhs6yugssu"
+          "Value": "18u20fsgje"
         },
         {
           "Name": "label",
@@ -21716,18 +21442,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U="
+          "Value": "sha256-v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8="
         }
       ]
     },
     {
-      "Route": "TodoListMVC.xhs6yugssu.styles.css",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-xhs6yugssu.gz",
+      "Route": "TodoListMVC.18u20fsgje.styles.css",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-18u20fsgje.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002016129032"
+          "Quality": "0.001886792453"
         }
       ],
       "ResponseHeaders": [
@@ -21737,15 +21463,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "495"
+          "Value": "529"
         },
         {
           "Name": "ETag",
-          "Value": "\"LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=\""
+          "Value": "\"v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21765,13 +21491,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=\""
+          "Value": "W/\"gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xhs6yugssu"
+          "Value": "18u20fsgje"
         },
         {
           "Name": "label",
@@ -21779,12 +21505,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM="
+          "Value": "sha256-gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8="
         }
       ]
     },
     {
-      "Route": "TodoListMVC.xhs6yugssu.styles.css",
+      "Route": "TodoListMVC.18u20fsgje.styles.css",
       "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TodoListMVC.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21794,7 +21520,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1002"
+          "Value": "1097"
         },
         {
           "Name": "Content-Type",
@@ -21802,11 +21528,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM=\""
+          "Value": "\"gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21816,7 +21542,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xhs6yugssu"
+          "Value": "18u20fsgje"
         },
         {
           "Name": "label",
@@ -21824,13 +21550,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-O5CwXJ6ZFd29rlTVOj1aqVDP7cUF6TihdMOnPavaINM="
+          "Value": "sha256-gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8="
         }
       ]
     },
     {
-      "Route": "TodoListMVC.xhs6yugssu.styles.css.gz",
-      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-xhs6yugssu.gz",
+      "Route": "TodoListMVC.18u20fsgje.styles.css.gz",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-18u20fsgje.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21839,7 +21565,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "495"
+          "Value": "529"
         },
         {
           "Name": "Content-Type",
@@ -21847,11 +21573,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U=\""
+          "Value": "\"v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 04:08:18 GMT"
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21869,7 +21595,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xhs6yugssu"
+          "Value": "18u20fsgje"
         },
         {
           "Name": "label",
@@ -21877,7 +21603,281 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LPPWfubHkf8mZPI+MCcT7r75Jc6A9yHGwVWvHvRD16U="
+          "Value": "sha256-v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8="
+        }
+      ]
+    },
+    {
+      "Route": "TodoListMVC.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-18u20fsgje.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001886792453"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "529"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8="
+        }
+      ]
+    },
+    {
+      "Route": "TodoListMVC.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TodoListMVC.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1097"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8="
+        }
+      ]
+    },
+    {
+      "Route": "TodoListMVC.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\26w3at4lrr-18u20fsgje.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8="
+        }
+      ]
+    },
+    {
+      "Route": "TodoListMVC.styles.css",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-18u20fsgje.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001886792453"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "529"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8="
+        }
+      ]
+    },
+    {
+      "Route": "TodoListMVC.styles.css",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TodoListMVC.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1097"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gWGG7/I87Ewque2+pG9HEiXkTb2VRpu/fb7Pf0sUAQ8="
+        }
+      ]
+    },
+    {
+      "Route": "TodoListMVC.styles.css.gz",
+      "AssetFile": "C:\\Users\\Jedd\\TodoListMVC\\obj\\Debug\\net9.0\\compressed\\3aeyzpima7-18u20fsgje.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 17 May 2025 08:32:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v9JhqOyj0tITFtvGUJV3UE1fzvZWaVMgRb3W/BHKpv8="
         }
       ]
     }

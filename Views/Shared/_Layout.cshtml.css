@@ -39,3 +39,7 @@ button.accept-policy {
   line-height: inherit;
 }
 
+.btn-nowrap {
+    white-space: nowrap;       
+    min-width: 110px;       
+}

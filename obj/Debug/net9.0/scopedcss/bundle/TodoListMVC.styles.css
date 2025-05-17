@@ -40,3 +40,7 @@ button.accept-policy[b-ilt94ybjf8] {
   line-height: inherit;
 }
 
+.btn-nowrap[b-ilt94ybjf8] {
+    white-space: nowrap;       
+    min-width: 110px;       
+}

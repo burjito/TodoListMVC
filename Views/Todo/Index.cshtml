@@ -65,18 +65,22 @@
             </select>
         </div>
 
-        <div class="col-md-auto d-flex gap-2">
+        <div class="col-md-3 d-flex gap-2 align-items-center">
             <button type="submit" class="btn btn-primary">Filter</button>
-            <a class="btn btn-outline-secondary @(showHidden ? "active" : "")" href="?showHidden=@(!showHidden)">
+            <input type="hidden" name="showHidden" value="@(showHidden ? "false" : "true")" />
+            <input type="hidden" name="category" value="@selectedCategory" />
+            <input type="hidden" name="priority" value="@selectedPriority" />
+            <input type="hidden" name="status" value="@selectedStatus" />
+            <input type="hidden" name="sortOrder" value="@currentSort" />
+            <button type="submit" class="btn btn-outline-secondary @(showHidden ? "active" : "")">
                 @(showHidden ? "Hide Hidden" : "Show Hidden Items")
-            </a>
+            </button>
         </div>
 
-        <div class="col d-flex justify-content-end">
-            <a class="btn btn-success" href="/Todo/Create">+ New Task</a>
+        <div class="col-md d-flex justify-content-end align-items-center">
+            <a class="btn btn-success" href="/Todo/Create">New Task</a>
         </div>
     </form>
-
 
 
     <table class="table table-bordered table-hover align-middle">
