@@ -47,8 +47,11 @@
             <span asp-validation-for="Priority" class="text-danger"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary">Create</button>
-        <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+        </div>
+
     </form>
 
     @section Scripts {
