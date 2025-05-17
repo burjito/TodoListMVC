@@ -65,25 +65,22 @@
             </select>
         </div>
 
-        <div class="col-md-2 d-flex align-items-center">
+        <div class="col-md-3 d-flex gap-2 align-items-center">
             <button type="submit" class="btn btn-primary">Filter</button>
+
+            <input type="hidden" name="category" value="@selectedCategory" />
+            <input type="hidden" name="priority" value="@selectedPriority" />
+            <input type="hidden" name="status" value="@selectedStatus" />
+            <input type="hidden" name="sortOrder" value="@currentSort" />
+            <input type="hidden" name="showHidden" value="@(showHidden ? "false" : "true")" />
+            <button type="submit" class="btn btn-outline-secondary @(showHidden ? "active" : "")">
+                @(showHidden ? "Hide Hidden" : "Show Hidden Items")
+            </button>
         </div>
 
         <div class="col-md d-flex justify-content-end align-items-center">
             <a class="btn btn-success" href="/Todo/Create">New Task</a>
         </div>
-    </form>
-
-    <!-- Show Hidden Toggle - in a separate form -->
-    <form method="get" class="mb-3">
-        <input type="hidden" name="showHidden" value="@(showHidden ? "false" : "true")" />
-        <input type="hidden" name="category" value="@selectedCategory" />
-        <input type="hidden" name="priority" value="@selectedPriority" />
-        <input type="hidden" name="status" value="@selectedStatus" />
-        <input type="hidden" name="sortOrder" value="@currentSort" />
-        <button type="submit" class="btn btn-outline-secondary @(showHidden ? "active" : "")">
-            @(showHidden ? "Hide Hidden" : "Show Hidden Items")
-        </button>
     </form>
 
     <table class="table table-bordered table-hover align-middle">
@@ -101,7 +98,7 @@
             {
                 if (item.IsHidden && !showHidden)
                 {
-                    continue;
+                    continue; // skip hidden unless showHidden is true
                 }
 
                 string statusClass = item.Status switch
@@ -125,7 +122,7 @@
                         <form asp-action="ToggleHide" method="post" class="d-inline">
                             @Html.AntiForgeryToken()
                             <input type="hidden" name="id" value="@item.Id" />
-                            <input type="hidden" name="showHidden" value="@(showHidden)" />
+                            <input type="hidden" name="showHidden" value="@showHidden" />
                             <button type="submit" class="btn btn-secondary btn-sm me-1">
                                 @(item.IsHidden ? "Unhide" : "Hide")
                             </button>
