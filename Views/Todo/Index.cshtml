@@ -66,16 +66,13 @@
         </div>
 
         <div class="col-md-3 d-flex gap-2 align-items-center">
+            <input type="hidden" name="showHidden" value="@showHidden" />
             <button type="submit" class="btn btn-primary">Filter</button>
 
-            <input type="hidden" name="category" value="@selectedCategory" />
-            <input type="hidden" name="priority" value="@selectedPriority" />
-            <input type="hidden" name="status" value="@selectedStatus" />
-            <input type="hidden" name="sortOrder" value="@currentSort" />
-            <input type="hidden" name="showHidden" value="@(showHidden ? "false" : "true")" />
-            <button type="submit" class="btn btn-outline-secondary @(showHidden ? "active" : "")">
+            <a class="btn btn-outline-secondary @(showHidden ? "active" : "")"
+               href="?category=@selectedCategory&priority=@selectedPriority&status=@selectedStatus&sortOrder=@currentSort&showHidden=@(!showHidden)">
                 @(showHidden ? "Hide Hidden" : "Show Hidden Items")
-            </button>
+            </a>
         </div>
 
         <div class="col-md d-flex justify-content-end align-items-center">
