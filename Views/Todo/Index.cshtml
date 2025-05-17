@@ -86,46 +86,37 @@
         <tbody>
             @foreach (var task in Model)
             {
-                <tr class="@(task.IsHidden ? "table-secondary" : "")">
-                    <td class="text-truncate">@task.Title</td>
+                <tr>
+                    <td>@task.Title</td>
                     <td>@task.Category?.Name</td>
                     <td>@task.Priority</td>
+                    <td>@task.Status</td>
                     <td>
-                        <span class="badge bg-@(task.Status == Status.Done ? "success" : "warning")">
-                            @task.Status
-                        </span>
-                    </td>
-                    <td>
-                        <div class="d-flex flex-wrap gap-2">
-                            <a asp-action="Details" asp-route-id="@task.Id" class="btn btn-sm btn-info">View</a>
-                            <a asp-action="Edit" asp-route-id="@task.Id" class="btn btn-sm btn-warning">Edit</a>
+                        <a class="btn btn-sm btn-info" href="/Todo/Details/@task.Id">Details</a>
+                        <a class="btn btn-sm btn-warning" href="/Todo/Edit/@task.Id">Edit</a>
 
-                            <form asp-action="ToggleHide" asp-route-id="@task.Id" method="post" class="d-inline">
+                        @if (!showHidden)
+                        {
+                            <form method="post" action="/Todo/ToggleHide/@task.Id" style="display:inline;">
                                 @Html.AntiForgeryToken()
-                                <button type="submit" class="btn btn-sm btn-dark">
-                                    @(task.IsHidden ? "Unhide" : "Hide")
-                                </button>
+                                <button type="submit" class="btn btn-sm btn-secondary" title="Hide Task">Hide</button>
                             </form>
-
-                            <form asp-action="Delete" asp-route-id="@task.Id" method="post" class="d-inline">
+                        }
+                        else
+                        {
+                            <form method="post" action="/Todo/ToggleHide/@task.Id" style="display:inline;">
                                 @Html.AntiForgeryToken()
-                                <button type="submit" class="btn btn-sm btn-danger"
-                                        onclick="return confirm('Delete this task?');">
-                                    Delete
-                                </button>
+                                <button type="submit" class="btn btn-sm btn-success" title="Unhide Task">Unhide</button>
                             </form>
+                        }
 
-                            @if (task.Status == Status.Pending)
-                            {
-                                <form asp-action="MarkAsDone" asp-route-id="@task.Id" method="post" class="d-inline">
-                                    @Html.AntiForgeryToken()
-                                    <button type="submit" class="btn btn-sm btn-success"
-                                            onclick="return confirm('Mark this task as done?');">
-                                        Done
-                                    </button>
-                                </form>
-                            }
-                        </div>
+                        @if (task.Status != Status.Done && task.Status != Status.Deleted)
+                        {
+                            <form method="post" action="/Todo/MarkAsDone/@task.Id" style="display:inline;">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-sm btn-success">Mark Done</button>
+                            </form>
+                        }
                     </td>
                 </tr>
             }

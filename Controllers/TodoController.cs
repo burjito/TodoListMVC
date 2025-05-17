@@ -21,10 +21,15 @@ namespace TodoListMVC.Controllers
                 .Include(t => t.Category)
                 .AsQueryable();
 
-            // By default, hide "Deleted" and items where IsHidden is true unless explicitly requested
-            if (!showHidden)
+            if (showHidden)
             {
-                tasks = tasks.Where(t => t.Status != Status.Deleted && !t.IsHidden);
+                // Show only hidden tasks, exclude deleted as usual
+                tasks = tasks.Where(t => t.IsHidden && t.Status != Status.Deleted);
+            }
+            else
+            {
+                // Show only non-hidden, non-deleted tasks
+                tasks = tasks.Where(t => !t.IsHidden && t.Status != Status.Deleted);
             }
 
             if (!string.IsNullOrEmpty(category) && int.TryParse(category, out int catId))
@@ -205,7 +210,8 @@ namespace TodoListMVC.Controllers
             item.IsHidden = !item.IsHidden;
             _context.SaveChanges();
 
-            // Redirect back to Index, preserve showing hidden items if currently showing
+            // Redirect back to Index with correct showHidden flag depending on current context
+            // We infer if we came from hidden view or normal view by looking at IsHidden after toggle
             return RedirectToAction(nameof(Index), new { showHidden = item.IsHidden });
         }
 
