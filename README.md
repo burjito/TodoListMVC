@@ -1,6 +1,6 @@
 # TodoListMVC
 
-A simple ASP.NET Core MVC web app for managing your daily tasks with ease!
+A simple ASP.NET Core MVC web app for managing your daily tasks with ease.
 
 This app lets you:
 
