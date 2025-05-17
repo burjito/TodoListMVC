@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TodoListMVC.Models
 {
@@ -19,11 +18,12 @@ namespace TodoListMVC.Models
         [Required(ErrorMessage = "Please select a category")]
         public int CategoryId { get; set; }
 
-        // Make this nullable so it isn't implicitly required
         public Category? Category { get; set; }
 
         public Priority Priority { get; set; }
 
         public Status Status { get; set; } = Status.Pending;
+
+        public bool IsHidden { get; set; } = false;
     }
 }

@@ -15,12 +15,17 @@ namespace TodoListMVC.Controllers
         }
 
         // GET: /Todo
-        public IActionResult Index(string category, string priority, string status, string sortOrder)
+        public IActionResult Index(string category, string priority, string status, string sortOrder, bool showHidden = false)
         {
             var tasks = _context.TodoItems
                 .Include(t => t.Category)
-                .Where(t => t.Status != Status.Deleted)
                 .AsQueryable();
+
+            // By default, hide "Deleted" and items where IsHidden is true unless explicitly requested
+            if (!showHidden)
+            {
+                tasks = tasks.Where(t => t.Status != Status.Deleted && !t.IsHidden);
+            }
 
             if (!string.IsNullOrEmpty(category) && int.TryParse(category, out int catId))
                 tasks = tasks.Where(t => t.CategoryId == catId);
@@ -42,6 +47,8 @@ namespace TodoListMVC.Controllers
 
             ViewData["CurrentSort"] = sortOrder ?? "";
             ViewData["Categories"]  = _context.Categories.OrderBy(c => c.Name).ToList();
+            ViewData["ShowHidden"]  = showHidden;
+
             return View(tasks.ToList());
         }
 
@@ -185,6 +192,21 @@ namespace TodoListMVC.Controllers
                 .OrderByDescending(t => t.Id)
                 .ToList();
             return View(tasks);
+        }
+
+        // POST: /Todo/ToggleHide/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ToggleHide(int id)
+        {
+            var item = _context.TodoItems.Find(id);
+            if (item == null) return NotFound();
+
+            item.IsHidden = !item.IsHidden;
+            _context.SaveChanges();
+
+            // Redirect back to Index, preserve showing hidden items if currently showing
+            return RedirectToAction(nameof(Index), new { showHidden = item.IsHidden });
         }
 
         // ===== Category Management =====

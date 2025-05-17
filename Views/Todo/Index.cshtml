@@ -8,8 +8,8 @@
     var selectedCategory = Context.Request.Query["category"].ToString();
     var selectedPriority = Context.Request.Query["priority"].ToString();
     var selectedStatus = Context.Request.Query["status"].ToString();
+    var showHidden = Context.Request.Query["showHidden"].ToString() == "true";
 }
-
 <div class="container mt-4">
     <h2 class="mb-3">To-Do List</h2>
 
@@ -44,7 +44,7 @@
                 }
             </select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <select name="sortOrder" class="form-select">
                 <option value="">Sort By</option>
                 @{
@@ -64,8 +64,11 @@
                 }
             </select>
         </div>
-        <div class="col-md-3 d-flex justify-content-between">
+        <div class="col-md-4 d-flex gap-2">
             <button type="submit" class="btn btn-primary">Filter</button>
+            <a class="btn btn-outline-secondary" href="?showHidden=@(!showHidden)">
+                @(showHidden ? "Hide Hidden" : "Show Hidden Items")
+            </a>
             <a class="btn btn-success" href="/Todo/Create">+ New Task</a>
         </div>
     </form>
@@ -73,17 +76,17 @@
     <table class="table table-bordered table-hover align-middle">
         <thead class="table-dark">
             <tr>
-                <th style="width: 38%;">Title</th>
-                <th style="width: 13%;">Category</th>
-                <th style="width: 13%;">Priority</th>
-                <th style="width: 13%;">Status</th>
-                <th style="width: 23%;">Actions</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var task in Model)
             {
-                <tr>
+                <tr class="@(task.IsHidden ? "table-secondary" : "")">
                     <td class="text-truncate">@task.Title</td>
                     <td>@task.Category?.Name</td>
                     <td>@task.Priority</td>
@@ -97,23 +100,30 @@
                             <a asp-action="Details" asp-route-id="@task.Id" class="btn btn-sm btn-info">View</a>
                             <a asp-action="Edit" asp-route-id="@task.Id" class="btn btn-sm btn-warning">Edit</a>
 
+                            <form asp-action="ToggleHide" asp-route-id="@task.Id" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-sm btn-dark">
+                                    @(task.IsHidden ? "Unhide" : "Hide")
+                                </button>
+                            </form>
+
                             <form asp-action="Delete" asp-route-id="@task.Id" method="post" class="d-inline">
-                            @Html.AntiForgeryToken()
-                            <button type="submit" class="btn btn-sm btn-danger"
-                                    onclick="return confirm('Delete this task?');">
-                                Delete
-                            </button>
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Delete this task?');">
+                                    Delete
+                                </button>
                             </form>
 
                             @if (task.Status == Status.Pending)
                             {
-                            <form asp-action="MarkAsDone" asp-route-id="@task.Id" method="post" class="d-inline">
-                                @Html.AntiForgeryToken()
-                                <button type="submit" class="btn btn-sm btn-success"
-                                        onclick="return confirm('Mark this task as done?');">
-                                Done
-                                </button>
-                            </form>
+                                <form asp-action="MarkAsDone" asp-route-id="@task.Id" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm btn-success"
+                                            onclick="return confirm('Mark this task as done?');">
+                                        Done
+                                    </button>
+                                </form>
                             }
                         </div>
                     </td>
